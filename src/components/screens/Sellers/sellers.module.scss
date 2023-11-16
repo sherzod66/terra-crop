@@ -1,0 +1,79 @@
+@import '/src/assets/styles/variable';
+.sellers {
+	width: 100%;
+	margin-top: 20px;
+	@media (max-width: 1024px) {
+		padding: 0px 10px;
+	}
+	.sellers__container {
+		.sellers__content {
+			.RTitle {
+				@extend %titleGlobal;
+				font-size: 22px;
+				color: $darkgreen;
+				font-weight: 600;
+			}
+			.sellers__region {
+				&._anim_none__hide {
+					text-decoration: none;
+				}
+				@include scroll_ani_hidden(-100px, 0px);
+				transition: all 0.5s ease-in-out 0.1s;
+				&._active {
+					@include scroll_ani_show();
+				}
+				& svg {
+					margin-right: 7px;
+					font-size: 16px;
+				}
+				margin: 0px 0px 10px 0px;
+				&:last-child {
+					margin: 0px 0px 0px 0px;
+				}
+				.sellers__card {
+					background-color: $white;
+					margin: 0px 0px 20px 0px;
+					&:last-child {
+						margin: 0px 0px 0px 0px;
+					}
+					padding: 0px 15px 15px 15px;
+					.fullName {
+						@extend %titleGlobal;
+						line-height: 36px;
+						font-size: 22px;
+					}
+					.address {
+						margin-top: 10px;
+						@extend %textGlobal;
+						opacity: 0.8;
+					}
+					.seller__info {
+						margin: 10px 0px 0px 0px;
+						display: flex;
+						align-items: center;
+						@media (max-width: 425px) {
+							flex-wrap: wrap;
+						}
+						& a {
+							flex: 0 1 15%;
+							display: block;
+							margin-right: 50px;
+							@extend %textGlobal;
+							text-decoration: underline;
+							@media (max-width: 425px) {
+								flex: 1 1 100%;
+								margin-bottom: 10px;
+							}
+						}
+						.sellers__map {
+							padding: 10px;
+							display: block;
+							background-color: $green;
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+}

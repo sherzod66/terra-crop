@@ -1,0 +1,107 @@
+@import '/src/assets/styles/variable';
+.news {
+	width: 100%;
+	margin-top: 115px;
+	@media (max-width: 1024px) {
+		padding: 0px 10px;
+	}
+	@media (max-width: 768px) {
+		margin-top: 140px;
+	}
+	.news__container {
+		& h1 {
+			@extend %titleGlobal;
+		}
+		.news__row {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0px -20px;
+			@media (max-width: 425px) {
+				margin: 0px 0px;
+			}
+			.news__column {
+				&._anim_none__hide {
+					text-decoration: none;
+				}
+				display: block;
+				@include scroll_ani_hidden(0px, 50px);
+				transition: all 0.5s ease 0s;
+				&._active {
+					@include scroll_ani_show();
+				}
+				padding: 20px 20px;
+				flex: 0 1 25%;
+				color: #000;
+				.news__item {
+					background-color: $white;
+					.news__image {
+						width: 100%;
+						height: 300px;
+						& img {
+							@extend %image;
+						}
+					}
+					.news__contentBody {
+						padding: 10px;
+						font-size: 16px;
+						line-height: 22px;
+						& p:first-child {
+							font-weight: 600;
+							font-size: 18px;
+							line-height: 24px;
+						}
+						& p:last-child {
+							overflow: hidden;
+							display: -webkit-box;
+							-webkit-line-clamp: 3;
+							-webkit-box-orient: vertical;
+							line-height: 1.3em;
+							height: 3.9em;
+						}
+						&._open p {
+							line-height: 1.4em;
+							display: block;
+							height: auto;
+						}
+					}
+					.news__info {
+						padding: 10px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						font-size: 15px;
+						& a {
+							background-color: $darkgreen;
+							padding: 10px;
+							color: white;
+							transition: all 0.5s ease-in-out 0s;
+							&:hover {
+								background-color: $green;
+							}
+						}
+						& li:last-child {
+							transition: all 0.5s ease-in-out 0s;
+							cursor: pointer;
+							background-color: $darkgreen;
+							padding: 10px;
+							color: white;
+							&:hover {
+								background-color: $green;
+							}
+						}
+					}
+				}
+				@media (max-width: 1024px) {
+					flex: 0 1 33.333%;
+				}
+				@media (max-width: 768px) {
+					flex: 0 1 50%;
+				}
+				@media (max-width: 425px) {
+					flex: 0 1 100%;
+					padding: 20px 0px;
+				}
+			}
+		}
+	}
+}

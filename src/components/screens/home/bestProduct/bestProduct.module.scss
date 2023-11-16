@@ -1,0 +1,113 @@
+@import '/src/assets/styles/variable';
+
+.bestProduct {
+	width: 100%;
+	margin-top: 50px;
+	@media (max-width: 1024px) {
+		padding: 0px 10px;
+	}
+	.bestProduct__container {
+		.bestProduct__title {
+			font-size: 36px;
+			font-weight: 400;
+			line-height: 45px;
+		}
+		.bestProduct__row {
+			display: flex;
+			margin: 30px -15px 0px -15px;
+			.bestProduct__column {
+				padding: 0px 15px;
+				display: block;
+				flex: 0 1 25%;
+				transform: translate(0px, 100px);
+				opacity: 0;
+				visibility: hidden;
+				&:hover .bestProduct__image {
+					transform: rotateY(-180deg);
+				}
+				@include transition_ani(all);
+				.bestProduct__image {
+					position: relative;
+					width: 100%;
+					height: 400px;
+					transition: all 0.8s ease 0s;
+					transform-style: preserve-3d;
+					.bestProduct__front,
+					.bestProduct__back {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						&._l {
+							background-color: bisque;
+						}
+						& img {
+							@extend %image;
+						}
+					}
+					.bestProduct__front {
+						z-index: 2;
+						transform: rotateY(0deg);
+						background-color: #77608d;
+
+						backface-visibility: hidden;
+					}
+					.bestProduct__back {
+						transform: rotateY(-180deg);
+						background-color: rgba(121, 79, 69, 0.5);
+					}
+				}
+
+				& p {
+					color: #000;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 26px;
+					margin-top: 15px;
+					text-align: center;
+					text-transform: capitalize;
+				}
+				& ._l {
+					background-color: bisque;
+					width: 100%;
+					height: 15px;
+					border-radius: 10px;
+				}
+				._anim_none__hide {
+					color: #000;
+				}
+				&._active {
+					transform: translate(0px, 0px);
+					opacity: 1;
+					visibility: visible;
+					& img {
+						transform: scale(1);
+					}
+				}
+				@media (max-width: 1024px) {
+					flex: 0 1 33.333%;
+					padding: 15px 15px;
+				}
+				@media (max-width: 768px) {
+					flex: 0 1 50%;
+					.bestProduct__image {
+						width: 100%;
+						height: 202px;
+					}
+				}
+			}
+			@media (max-width: 1024px) {
+				flex-wrap: wrap;
+				margin: 15px -15px 0px -15px;
+			}
+		}
+		.abutMin__link {
+			margin-top: 20px;
+			@extend %buttonStyle;
+		}
+	}
+}

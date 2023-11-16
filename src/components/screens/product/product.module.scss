@@ -1,0 +1,117 @@
+@import '/src/assets/styles/variable';
+.product {
+	margin-top: 30px;
+	@media (max-width: 1024px) {
+		padding: 0px 10px;
+	}
+	.product__container {
+		.product__row {
+			display: flex;
+			._anim_none__hide {
+				text-decoration: none;
+			}
+			@media (max-width: 1024px) {
+				justify-content: space-between;
+			}
+			@media (max-width: 768px) {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			.product__imageColumn {
+				@include scroll_ani_hidden(-100px, 0px);
+				transition: all 0.5s ease-in-out 0s;
+				flex: 0 1 30%;
+				min-width: 0;
+				margin-right: 20px;
+				height: 400px;
+				@media (max-width: 1024px) {
+					flex: 0 1 35%;
+					margin-right: 0px;
+				}
+				@media (max-width: 768px) {
+					flex: 0 1 50%;
+				}
+				@media (max-width: 425px) {
+					flex: 1 1 100%;
+				}
+				&._active {
+					@include scroll_ani_show();
+				}
+			}
+			.product__contentColumn {
+				@include scroll_ani_hidden(100px, 0px);
+				transition: all 0.5s ease-in-out 0s;
+				& h1 {
+					text-transform: capitalize;
+				}
+				&._active {
+					@include scroll_ani_show();
+				}
+				flex: 0 1 60%;
+				& h2 {
+					@include scroll_ani_hidden(100px, 0px);
+					transition: all 0.5s ease-in-out 0.1s;
+					margin: 20px 0px;
+					opacity: 0.8;
+				}
+				&._active h2 {
+					@include scroll_ani_show();
+				}
+				& p {
+					@include scroll_ani_hidden(100px, 0px);
+					transition: all 0.5s ease-in-out 0.2s;
+					@extend %textGlobal;
+				}
+				&._active p {
+					@include scroll_ani_show();
+				}
+				.theProduct__table {
+					@include scroll_ani_hidden(100px, 0px);
+					transition: all 0.5s ease-in-out 0.3s;
+					&._active {
+						@include scroll_ani_show();
+					}
+					margin-top: 30px;
+					font-size: 16px;
+					.theProduct__table_toxins {
+						display: flex;
+						background-color: $darkgreen;
+						& li {
+							padding: 5px 0px;
+							flex: 0 1 50%;
+							color: #fff;
+							font-weight: 500;
+							text-align: center;
+							border-right: 1px solid #ffffff;
+						}
+						& li:last-child {
+							border-right: 0px solid #0a0a0a;
+						}
+					}
+
+					.theProduct__table_data_toxins {
+						display: flex;
+						background-color: $green;
+						color: #fff;
+						& li {
+							flex: 0 1 50%;
+							border-top: 1px solid #ffffff;
+							border-right: 1px solid #ffffff;
+							padding: 5px;
+							text-align: center;
+							word-wrap: break-word;
+							overflow: hidden;
+						}
+						& li:last-child {
+							border-right: 0px solid #ffffff;
+						}
+					}
+				}
+				@media (max-width: 768px) {
+					flex: 1 1 100%;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}

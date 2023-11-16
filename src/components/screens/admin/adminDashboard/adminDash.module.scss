@@ -1,0 +1,56 @@
+@import '/src/assets/styles/variable';
+.row {
+	display: flex;
+	margin-bottom: 20px;
+	align-items: center;
+	&:last-child {
+		margin-bottom: 0px;
+	}
+	.row__image_name {
+		flex: 0 1 25%;
+		display: flex;
+		align-items: center;
+		.row__image {
+			width: 150px;
+			height: 150px;
+			border-radius: 5px;
+			overflow: hidden;
+			& img {
+				@extend %image;
+			}
+		}
+		& p {
+			margin-left: 10px;
+		}
+	}
+	.row__date {
+		flex: 0 1 20%;
+		& p:first-child {
+			font-size: 16px;
+		}
+		& p:last-child {
+			margin-top: 5px;
+			opacity: 0.8;
+			font-size: 14px;
+		}
+	}
+
+	.row_buttonWrapper {
+		flex: 0 1 25%;
+		align-self: center;
+		.row_button {
+			padding: 10px;
+			font-size: 16px;
+			color: #fff;
+			&.detail {
+				background-color: $green;
+			}
+			&.edit {
+				background-color: $green;
+			}
+			&.delete {
+				background-color: #e41749;
+			}
+		}
+	}
+}

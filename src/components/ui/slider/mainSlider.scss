@@ -1,0 +1,25 @@
+@import '/src/assets/styles/variable';
+.mySwiper {
+	height: 650px;
+	margin-top: 79px;
+	@media (max-width: 768px) {
+		margin-top: 128px;
+		height: 278px;
+	}
+	// .swiper-button-prev,
+	// .swiper-button-next {
+	//   @media (max-width: 768px) {
+	//   }
+	//   color: $green;
+	// }
+	.swiper-wrapper {
+		.swiper-slide {
+			& img {
+				@extend %image;
+			}
+		}
+	}
+	.swiper-pagination-bullet.swiper-pagination-bullet-active {
+		background: $green;
+	}
+}

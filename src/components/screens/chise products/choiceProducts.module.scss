@@ -1,0 +1,104 @@
+@import '/src/assets/styles/variable';
+.choiceP {
+	margin: 120px 0px 0px 0px;
+	@media (max-width: 768px) {
+		margin: 140px 0px 0px 0px;
+		padding: 0px 10px;
+	}
+	.choiceP__container {
+		.choiceP__row {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0px -20px;
+			@media (max-width: 1024px) {
+				margin: 0px 0px;
+			}
+
+			.choiceP__column {
+				display: block;
+				flex: 0 1 50%;
+				padding: 0px 20px;
+				margin: 15px 0px;
+				transition: all 0.5s ease-in-out 0s;
+				&:first-child {
+					@include scroll_ani_hidden(-100px, 0px);
+				}
+				&:nth-child(2) {
+					@include scroll_ani_hidden(100px, 0px);
+				}
+				&:nth-child(3) {
+					@include scroll_ani_hidden(-100px, 0px);
+				}
+				&:last-child {
+					@include scroll_ani_hidden(100px, 0px);
+				}
+				&._anim_none__hide {
+					text-decoration: none;
+				}
+				&._active {
+					@include scroll_ani_show();
+				}
+				&._active {
+					@include scroll_ani_show();
+				}
+				&._active {
+					@include scroll_ani_show();
+				}
+				&._active {
+					@include scroll_ani_show();
+				}
+				@media (max-width: 768px) {
+					display: block;
+					flex: 1 1 100%;
+					padding: 10px 0px;
+				}
+				.choiceP__item {
+					background-color: $darkgreen;
+					overflow: hidden;
+					color: #fff;
+					position: relative;
+					transition: all 0.5s ease 0s;
+					&:hover {
+						background-color: $green;
+					}
+				}
+
+				.choiceP__image {
+					width: 100%;
+					height: 386px;
+					@media (max-width: 768px) {
+						height: 300px;
+					}
+					position: relative;
+				}
+
+				.choiceP__image img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					object-position: center;
+				}
+
+				.choiceP__body {
+					position: relative;
+					padding: 10px;
+					text-align: center;
+				}
+
+				.choice__title {
+					font-size: 22px;
+					font-weight: 600;
+					line-height: 35px;
+					margin-bottom: 10px;
+				}
+
+				.choice__sub-title {
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 18px;
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+}

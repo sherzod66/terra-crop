@@ -1,0 +1,64 @@
+$white: #fbe5d7;
+$green: #149253;
+$darkgreen: #0f4c36;
+$yellow: #ffd02a;
+$transition: opacity 0.3s ease-in-out 0s;
+@mixin transition_ani($what) {
+	transition: $what 0.5s ease-in-out 0s;
+}
+@mixin scale_ani($scale) {
+	transform: scale($scale);
+}
+%image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+%buttonStyle {
+	display: inline-block;
+	background-color: $green;
+	color: #ffffff;
+	text-align: center;
+	padding: 10px 10px;
+	font-size: 30px;
+	font-weight: 400;
+	@include transition_ani(background-color);
+	&:hover {
+		background-color: $darkgreen;
+	}
+	@media (max-width: 428px) {
+		padding: 7px 7px;
+		font-size: 24px;
+	}
+}
+
+%titleGlobal {
+	font-size: 36px;
+	font-weight: 400;
+	line-height: 45px;
+}
+%textGlobal {
+	color: #000;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 26px;
+}
+%listAdmin {
+	color: $green;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 26px;
+}
+
+@mixin scroll_ani_hidden($x, $y) {
+	transform: translate($x, $y);
+	opacity: 0;
+	visibility: hidden;
+}
+@mixin scroll_ani_show() {
+	transform: translate(0px, 0px);
+	opacity: 1;
+	visibility: visible;
+}
