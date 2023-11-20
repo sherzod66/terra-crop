@@ -28,17 +28,10 @@ const AboutMin: FC = () => {
 							ham qo‘shib oldi. Hozirgi kunda ushbu kompaniya sanoat, qishloq
 							xo'jaligi va oziq-ovqat sanoatida foydalanish uchun kaliy
 							karbonat, o'simlik moyi va barcha turdagi organik o'g'itlar kabi
-							boshqa mahsulotlarni taklif qilmoqda. Mithaq Co. oltingugurt
+							boshqa mahsulotlarni taklif qilmoqda. TerraCrop oltingugurt
 							gullari ishlab chiqaruvchisi va qishloq xo'jaligi o'g'itlari
 							importchisi
 						</p>
-						<Link
-							id='_anim-items'
-							className={cn(styles.abutMin__link, styles._anim_none__hide)}
-							href={'/about-us'}
-						>
-							Ko'proq mlumot
-						</Link>
 					</div>
 					<div className={styles.abutMin__column}>
 						<img

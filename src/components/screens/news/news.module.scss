@@ -9,6 +9,9 @@
 		margin-top: 140px;
 	}
 	.news__container {
+		.abutMin__link {
+			@extend %buttonStyle;
+		}
 		& h1 {
 			@extend %titleGlobal;
 		}

@@ -1,4 +1,5 @@
 import { FirebaseConfig } from '@/components/firebaseConfig/FirebaseConfig'
+import { TFeedback } from '@/components/screens/contact-us/ContactUs'
 import { INews } from '@/types/news.type'
 import { IProduct } from '@/types/product'
 import { ISellers } from '@/types/sellers'
@@ -82,6 +83,30 @@ export const DeleteNews: TDelNews = async (data, setIsInfo) => {
 	try {
 		await deleteObject(deleteRef)
 		const docRemove = doc(db, 'news', data.id)
+		await deleteDoc(docRemove)
+		console.log('susses')
+		setIsInfo(prev => ({ ...prev, loading: false }))
+		location.reload()
+	} catch (e) {
+		alert('Something went wrong')
+		console.error(e)
+	}
+}
+
+type TDelFeedback = (
+	data: Required<TFeedback>,
+	setIsInfo: Dispatch<
+		SetStateAction<{
+			loading: boolean
+			notFound: boolean
+		}>
+	>
+) => void
+
+export const DeleteFeedback: TDelFeedback = async (data, setIsInfo) => {
+	setIsInfo(prev => ({ ...prev, loading: true }))
+	try {
+		const docRemove = doc(db, 'feedback', data.id)
 		await deleteDoc(docRemove)
 		console.log('susses')
 		setIsInfo(prev => ({ ...prev, loading: false }))

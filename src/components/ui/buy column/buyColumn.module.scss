@@ -5,13 +5,19 @@
 	color: #fff;
 	padding: 20px 0px;
 	margin: 120px 0px 0px 0px;
+	@media (max-width: 1024px) {
+		padding: 20px 10px;
+	}
 
 	.buy_column__container {
 		.buy_column__row {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-
+			@media (max-width: 768px) {
+				flex-wrap: wrap;
+				flex-direction: column;
+			}
 			.buy_column__item {
 				& p {
 					font-size: 18px;
@@ -27,6 +33,9 @@
 					line-height: 24px;
 					font-weight: 600;
 					transition: all 0.5s ease 0s;
+					@media (max-width: 768px) {
+						margin-top: 20px;
+					}
 				}
 				& a:hover {
 					background-color: #149253;

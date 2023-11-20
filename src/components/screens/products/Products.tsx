@@ -18,26 +18,31 @@ const Products: FC<TAllProduct> = ({ data, id }) => {
 				<h1>{AllCollection(id)}</h1>
 				<div className={styles.product_detail__row}>
 					{data.length > 0 ? (
-						data.map(product => (
-							<Link
-								id='_anim-items'
-								href={`/product/${product.id}`}
-								key={product.id}
-								className={cn(
-									styles.product_detail__column,
-									styles._anim_none__hide
-								)}
-							>
-								<div className={styles.product_detail__item}>
-									<div className={styles.product_detail__image}>
-										<img src={product.image[0]} alt={product.name} />
+						data.map(product => {
+							const imageIndex = product.imageName.findIndex(name =>
+								name.includes('main')
+							)
+							return (
+								<Link
+									id='_anim-items'
+									href={`/product/${product.id}`}
+									key={product.id}
+									className={cn(
+										styles.product_detail__column,
+										styles._anim_none__hide
+									)}
+								>
+									<div className={styles.product_detail__item}>
+										<div className={styles.product_detail__image}>
+											<img src={product.image[imageIndex]} alt={product.name} />
+										</div>
+										<h3 className={styles.product_detail__title}>
+											{product.name}
+										</h3>
 									</div>
-									<h3 className={styles.product_detail__title}>
-										{product.name}
-									</h3>
-								</div>
-							</Link>
-						))
+								</Link>
+							)
+						})
 					) : (
 						<h2>Bu sahifada hech qanday mahsulot topilmadi</h2>
 					)}

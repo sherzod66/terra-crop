@@ -7,7 +7,9 @@ const WyUs: FC = () => {
 				<p className={styles.wyUs__title}>Nima uchun TerraCrop</p>
 				<div className={styles.wyUs__content}>
 					<iframe
-						src='https://www.youtube-nocookie.com/embed/-b1_Iokr0Vc?si=cF0qXXbPhMa-Hc9G'
+						width='560'
+						height='315'
+						src='https://www.youtube-nocookie.com/embed/UKpwZM4xFQY?si=Dp4G9Gf0VTFGVEwS'
 						title='YouTube video player'
 						frameBorder='0'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

@@ -1,7 +1,7 @@
 'use client'
 import { FC, useState } from 'react'
 import styles from './model.module.scss'
-import { useParams } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
 import { dashboardBarList } from '@/components/screens/admin/adminDashboard/dashboardBarList'
 const Model: FC = () => {
 	const [isShow, setIsShow] = useState(false)
@@ -9,15 +9,18 @@ const Model: FC = () => {
 	const Detail = dashboardBarList.findIndex(item =>
 		item.link.includes(String(id))
 	)
+	const pathName = usePathname()
 	return (
 		<>
-			<button
-				onClick={() => setIsShow(!isShow)}
-				className={styles.button}
-				type='button'
-			>
-				Add
-			</button>
+			{!pathName.includes('feedback') && (
+				<button
+					onClick={() => setIsShow(!isShow)}
+					className={styles.button}
+					type='button'
+				>
+					Add
+				</button>
+			)}
 			{isShow && (
 				<div
 					onClick={e =>

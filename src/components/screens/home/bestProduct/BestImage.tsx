@@ -1,36 +1,55 @@
 'use client'
 import Link from 'next/link'
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import styles from './bestProduct.module.scss'
 import cn from 'clsx'
 import { animationScroll } from '@/util/animation'
 import { useAdminProduct } from '../../../hooks/useAdminProduct'
+import { getImageChangeId } from '@/util/getImageId'
 const BestImage: FC = () => {
 	const { products } = useAdminProduct()
+	const [num, setNum] = useState<number>(0)
 	useEffect(() => {
 		animationScroll(styles)
 	}, [products])
 	return (
 		<>
 			{products.length > 0 ? (
-				products.slice(0, 4).map(product => (
-					<Link
-						key={product.id}
-						href={`product/${product.id}`}
-						id='_anim-items'
-						className={cn(styles.bestProduct__column, styles._anim_none__hide)}
-					>
-						<div className={styles.bestProduct__image}>
-							<div className={styles.bestProduct__front}>
-								<img src={`${product.image[0]}`} alt={product.imageName[0]} />
+				products.slice(0, 4).map(product => {
+					const imageIndex = product.imageName.findIndex(name =>
+						name.includes('main')
+					)
+
+					return (
+						<Link
+							key={product.id}
+							href={`product/${product.id}`}
+							id='_anim-items'
+							className={cn(
+								styles.bestProduct__column,
+								styles._anim_none__hide
+							)}
+						>
+							<div className={styles.bestProduct__image}>
+								<div className={styles.bestProduct__front}>
+									<img
+										src={`${product.image[imageIndex]}`}
+										alt={product.name}
+									/>
+								</div>
+								<div className={styles.bestProduct__back}>
+									<img
+										src={`${
+											product.image[getImageChangeId(product.image, imageIndex)]
+										}`}
+										alt={product.name}
+									/>
+								</div>
 							</div>
-							<div className={styles.bestProduct__back}>
-								<img src={`${product.image[1]}`} alt={product.imageName[1]} />
-							</div>
-						</div>
-						<p>{product.name}</p>
-					</Link>
-				))
+							<p>{product.name}</p>
+						</Link>
+					)
+				})
 			) : (
 				<>
 					<Link

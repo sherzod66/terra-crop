@@ -1,6 +1,7 @@
 import type { IconType } from 'react-icons/lib'
 import { BiSolidShoppingBagAlt, BiSolidNews } from 'react-icons/bi'
 import { FaUserEdit } from 'react-icons/fa'
+import { VscFeedback } from 'react-icons/vsc'
 import { FC } from 'react'
 import ProductForm from '@/components/screens/admin/form model/ProductForm'
 import NewsForm from '@/components/screens/admin/form model/NewsForm'
@@ -8,6 +9,7 @@ import AdminProduct from './AdminProduct'
 import AdminNews from './AdminNews'
 import AdminSellers from './AdminSellers'
 import SellersForm from '../form model/SellersForm'
+import AdminFeedback from './AdminFeedback'
 export type TDashBar = {
 	link: string
 	title: string
@@ -36,5 +38,12 @@ export const dashboardBarList: TDashBar[] = [
 		icons: FaUserEdit,
 		ModelDetail: SellersForm,
 		DashboardComponent: AdminSellers
+	},
+	{
+		link: '/admin/feedback',
+		title: 'Feedback',
+		icons: VscFeedback,
+		ModelDetail: SellersForm,
+		DashboardComponent: AdminFeedback
 	}
 ]

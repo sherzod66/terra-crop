@@ -1,0 +1,86 @@
+@import '/src/assets/styles/variable';
+.feedback__row {
+	position: relative;
+	.feedback__column {
+		margin-top: 20px;
+		@media (max-width: 1024px) {
+			padding: 0px 10px;
+		}
+		& h3 {
+			font-size: 28px;
+			font-weight: 500;
+			margin: 0px 0px 15px 0px;
+		}
+		.feedback__form {
+			& label {
+				display: block;
+				font-size: 16px;
+				margin: 0px 0px 10px 0px;
+			}
+			& input {
+				width: 100%;
+				background-color: $white;
+				display: block;
+				font-size: 16px;
+				margin: 0px 0px 10px 0px;
+				padding: 10px;
+				border: 2px solid transparent;
+				transition: border-color 0.5s ease 0s;
+			}
+			& input:focus {
+				border-color: $green;
+			}
+
+			.feedback__form_user_value {
+				display: flex;
+				flex-wrap: wrap;
+				margin: 0px -20px;
+				@media (max-width: 425px) {
+					flex-wrap: wrap;
+					margin: 0px 0px;
+				}
+				.feedback__form_column {
+					flex: 0 1 50%;
+					padding: 0px 20px;
+					@media (max-width: 425px) {
+						flex: 1 1 100%;
+						padding: 0px 0px;
+					}
+				}
+			}
+			.feedback__form_description_file {
+				& textarea {
+					width: 100%;
+					resize: vertical;
+					background-color: $white;
+					padding: 10px;
+					min-height: 80px;
+					font-size: 16px;
+					border: 2px solid transparent;
+					transition: border-color 0.5s ease 0s;
+				}
+				& textarea:focus {
+					border-color: $green;
+				}
+			}
+			.feedback__button {
+				color: #fff;
+				padding: 10px;
+				font-size: 16px;
+				font-weight: 500;
+				background-color: $darkgreen;
+				position: relative;
+				margin: 20px 15px 0px 0px;
+				transition: background-color 0.5s ease-in-out 0s;
+				&:hover {
+					background-color: $green;
+				}
+				&.feedback__submit {
+				}
+				&.feedback__reset {
+					background-color: red;
+				}
+			}
+		}
+	}
+}

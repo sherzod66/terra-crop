@@ -26,7 +26,7 @@ const ChoiceProducts: FC = () => {
 									/>
 								</div>
 								<div className={styles.choiceP__body}>
-									<h3 className={styles.choice__title}>{'fertilizers'}</h3>
+									<h3 className={styles.choice__title}>O'g'itlar</h3>
 									<h4 className={styles.choice__sub_title}>
 										{'fertilizersText'}
 									</h4>
@@ -46,10 +46,8 @@ const ChoiceProducts: FC = () => {
 									/>
 								</div>
 								<div className={styles.choiceP__body}>
-									<h3 className={styles.choice__title}>{'pesticides'}</h3>
-									<h4 className={styles.choice__sub_title}>
-										{'fertilizersText'}
-									</h4>
+									<h3 className={styles.choice__title}>Pestitsidlar</h3>
+									<h4 className={styles.choice__sub_title}></h4>
 								</div>
 							</div>
 						</Link>
@@ -67,9 +65,7 @@ const ChoiceProducts: FC = () => {
 								</div>
 								<div className={styles.choiceP__body}>
 									<h3 className={styles.choice__title}>Profert</h3>
-									<h4 className={styles.choice__sub_title}>
-										{'fertilizersText'}
-									</h4>
+									<h4 className={styles.choice__sub_title}></h4>
 								</div>
 							</div>
 						</Link>
@@ -80,16 +76,11 @@ const ChoiceProducts: FC = () => {
 						>
 							<div className={styles.choiceP__item}>
 								<div className={styles.choiceP__image}>
-									<img
-										src='https://www.ariashimi.ir/templates/yootheme/cache/somom-49870594.jpeg'
-										alt='poisons'
-									/>
+									<img src='/other-goods.jpeg' alt='poisons' />
 								</div>
 								<div className={styles.choiceP__body}>
-									<h3 className={styles.choice__title}>Other-goods</h3>
-									<h4 className={styles.choice__sub_title}>
-										{'fertilizersText'}
-									</h4>
+									<h3 className={styles.choice__title}>Boshqa maxsulotlar</h3>
+									<h4 className={styles.choice__sub_title}></h4>
 								</div>
 							</div>
 						</Link>

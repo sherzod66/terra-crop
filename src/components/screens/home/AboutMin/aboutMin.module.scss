@@ -1,78 +1,81 @@
-@import "/src/assets/styles/variable";
+@import '/src/assets/styles/variable';
 
 .abutMin {
-  overflow: hidden;
-  @media (max-width: 1024px) {
-    padding: 0px 10px;
-  }
-  margin-top: 70px;
-  width: 100%;
-  background-color: $white;
-  .abutMin__container {
-    .abutMin__row {
-      display: flex;
-      align-items: center;
-      .abutMin__column {
-        flex: 0 1 50%;
-        .abutMin__title {
-          transform: translate(-100px, 0px);
-          opacity: 0;
-          margin-bottom: 20px;
-          @extend %titleGlobal;
-          @include transition_ani(all);
-          &._active {
-            transform: translate(0px, 0px);
-            opacity: 1;
-          }
-        }
-        margin-right: 30px;
-        &:last-child {
-          margin-right: 0px;
-        }
-        & img {
-          @extend %image;
-          transform: translate(500px, 0px);
-          opacity: 0;
-          transition: all 0.5s ease-in-out 0s;
-          &._active {
-            transform: translate(0px, 0px);
-            opacity: 1;
-          }
-        }
-        & p {
-          @extend %textGlobal;
-          margin-bottom: 30px;
-          transform: translate(-100px, 0px);
-          opacity: 0;
-          transition: all 0.5s ease-in-out 0.2s;
-          &._active {
-            transform: translate(0px, 0px);
-            opacity: 1;
-          }
-        }
-        .abutMin__link {
-          @extend %buttonStyle;
-          opacity: 0;
-          &._active {
-            transform: translate(0px, 0px);
-            opacity: 1;
-          }
-        }
-        @media (max-width: 810px) {
-          flex: 1 1 100%;
-          margin-right: 0px;
-          margin-bottom: 30px;
-          &:last-child {
-            margin-bottom: 0px;
-          }
-        }
-      }
-      @media (max-width: 810px) {
-        flex-wrap: wrap;
-      }
-    }
-  }
-  ._anim_none__hide {
-    text-decoration: none;
-  }
+	overflow: hidden;
+	@media (max-width: 1024px) {
+		padding: 0px 10px;
+	}
+	@media (max-width: 768px) {
+		padding: 20px 10px;
+	}
+	margin-top: 70px;
+	width: 100%;
+	background-color: $white;
+	.abutMin__container {
+		.abutMin__row {
+			display: flex;
+			align-items: center;
+			.abutMin__column {
+				flex: 0 1 50%;
+				.abutMin__title {
+					transform: translate(-100px, 0px);
+					opacity: 0;
+					margin-bottom: 20px;
+					@extend %titleGlobal;
+					@include transition_ani(all);
+					&._active {
+						transform: translate(0px, 0px);
+						opacity: 1;
+					}
+				}
+				margin-right: 30px;
+				&:last-child {
+					margin-right: 0px;
+				}
+				& img {
+					@extend %image;
+					transform: translate(500px, 0px);
+					opacity: 0;
+					transition: all 0.5s ease-in-out 0s;
+					&._active {
+						transform: translate(0px, 0px);
+						opacity: 1;
+					}
+				}
+				& p {
+					@extend %textGlobal;
+					margin-bottom: 30px;
+					transform: translate(-100px, 0px);
+					opacity: 0;
+					transition: all 0.5s ease-in-out 0.2s;
+					&._active {
+						transform: translate(0px, 0px);
+						opacity: 1;
+					}
+				}
+				.abutMin__link {
+					@extend %buttonStyle;
+					opacity: 0;
+					&._active {
+						transform: translate(0px, 0px);
+						opacity: 1;
+					}
+				}
+				@media (max-width: 810px) {
+					flex: 1 1 100%;
+					margin-right: 0px;
+					margin-bottom: 30px;
+					&:last-child {
+						margin-bottom: 0px;
+					}
+				}
+			}
+			@media (max-width: 810px) {
+				flex-wrap: wrap;
+			}
+		}
+	}
+	._anim_none__hide {
+		text-decoration: none;
+	}
 }

@@ -2,8 +2,6 @@ import { FirebaseConfig } from '@/components/firebaseConfig/FirebaseConfig'
 import { IProduct } from '@/types/product'
 import { initializeApp } from 'firebase/app'
 import {
-	DocumentData,
-	DocumentSnapshot,
 	collection,
 	getDocs,
 	getFirestore,

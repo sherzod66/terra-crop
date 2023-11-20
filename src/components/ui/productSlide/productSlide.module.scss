@@ -10,7 +10,7 @@
 		width: 100%;
 		& img {
 			@extend %image;
-			object-fit: contain;
+			//object-fit: contain;
 		}
 	}
 }

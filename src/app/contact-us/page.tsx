@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { BsTelegram, BsWhatsapp } from 'react-icons/bs'
 import { AiOutlineMail } from 'react-icons/ai'
 import { FaPhone } from 'react-icons/fa6'
+import ContactUs from '@/components/screens/contact-us/ContactUs'
 export const metadata: Metadata = {
 	title: "Terra Crop | Biz bilan bog'lanish"
 }
@@ -15,6 +16,7 @@ export default function Admin() {
 			<main className={styles.contactUs}>
 				<div className={styles.contactUs__container}>
 					<h1>Biz bilan bog'lanish</h1>
+					<ContactUs />
 					<div className={styles.contactUs__body}>
 						<ul className={styles.contactUs__contact}>
 							<li>
