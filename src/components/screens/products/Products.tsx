@@ -32,11 +32,22 @@ const Products: FC<TAllProduct> = ({ data, id }) => {
 										styles._anim_none__hide
 									)}
 								>
-									<div className={styles.product_detail__item}>
+									<div
+										itemScope
+										itemType={AllCollection(id)}
+										className={styles.product_detail__item}
+									>
 										<div className={styles.product_detail__image}>
-											<img src={product.image[imageIndex]} alt={product.name} />
+											<img
+												itemProp='contentUrl'
+												src={product.image[imageIndex]}
+												alt={product.name}
+											/>
 										</div>
-										<h3 className={styles.product_detail__title}>
+										<h3
+											itemProp='name'
+											className={styles.product_detail__title}
+										>
 											{product.name}
 										</h3>
 									</div>

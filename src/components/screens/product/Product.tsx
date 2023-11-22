@@ -16,7 +16,7 @@ const Product: FC<{ data: IProduct }> = ({ data }) => {
 			<SiteMap productName={data.name} />
 			<main className={styles.product}>
 				<div className={styles.product__container}>
-					<div className={styles.product__row}>
+					<div itemScope className={styles.product__row}>
 						<div
 							id='_anim-items'
 							className={cn(
@@ -39,7 +39,11 @@ const Product: FC<{ data: IProduct }> = ({ data }) => {
 							<h2 id='_anim-items' className={styles._anim_none__hide}>
 								{data.subTitle}
 							</h2>
-							<p id='_anim-items' className={styles._anim_none__hide}>
+							<p
+								itemProp='description'
+								id='_anim-items'
+								className={styles._anim_none__hide}
+							>
 								{data.description}
 							</p>
 							<div

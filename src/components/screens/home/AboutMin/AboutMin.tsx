@@ -1,12 +1,13 @@
 'use client'
 import { FC, useEffect } from 'react'
 import styles from './aboutMin.module.scss'
-import Link from 'next/link'
 import cn from 'clsx'
 import { animationScroll } from '@/util/animation'
+import { threeBag } from './3d/threeBag'
 const AboutMin: FC = () => {
 	useEffect(() => {
 		animationScroll(styles)
+		threeBag('threeBag')
 	}, [])
 	return (
 		<div className={styles.abutMin}>
@@ -33,14 +34,7 @@ const AboutMin: FC = () => {
 							importchisi
 						</p>
 					</div>
-					<div className={styles.abutMin__column}>
-						<img
-							className={styles._anim_none__hide}
-							id='_anim-items'
-							src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrf6JZwBZJf_hEhS-Gd6_KJvIa2TrdO6T1WA&usqp=CAU'
-							alt='img'
-						/>
-					</div>
+					<div id='threeBag' className={styles.abutMin__column}></div>
 				</div>
 			</div>
 		</div>

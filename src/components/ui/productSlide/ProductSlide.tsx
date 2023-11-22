@@ -31,7 +31,7 @@ const ProductSlide: FC<TGallery> = ({ image, dataName }) => {
 			{image &&
 				image.map(item => (
 					<SwiperSlide className={styles.swiper_slide} key={item}>
-						<img draggable={false} src={item} alt={dataName} />
+						<img draggable={false} src={item} alt={dataName} itemProp={item} />
 					</SwiperSlide>
 				))}
 		</Swiper>

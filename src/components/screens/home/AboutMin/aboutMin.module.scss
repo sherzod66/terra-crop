@@ -16,6 +16,10 @@
 			display: flex;
 			align-items: center;
 			.abutMin__column {
+				&:last-child {
+					height: 400px;
+				}
+
 				flex: 0 1 50%;
 				.abutMin__title {
 					transform: translate(-100px, 0px);
@@ -32,19 +36,8 @@
 				&:last-child {
 					margin-right: 0px;
 				}
-				& img {
-					@extend %image;
-					transform: translate(500px, 0px);
-					opacity: 0;
-					transition: all 0.5s ease-in-out 0s;
-					&._active {
-						transform: translate(0px, 0px);
-						opacity: 1;
-					}
-				}
 				& p {
 					@extend %textGlobal;
-					margin-bottom: 30px;
 					transform: translate(-100px, 0px);
 					opacity: 0;
 					transition: all 0.5s ease-in-out 0.2s;
