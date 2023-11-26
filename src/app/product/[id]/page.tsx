@@ -29,6 +29,7 @@ export async function generateMetadata(
 	return {
 		metadataBase: new URL('https://firebasestorage.googleapis.com'),
 		title: `TerraCrop | ${product.name}`,
+		description: `Ulgurji narxda sotib olish ${product.name} TerraCrop`,
 		openGraph: {
 			images: [...getMetaImage(product.image), ...previousImages]
 		}
