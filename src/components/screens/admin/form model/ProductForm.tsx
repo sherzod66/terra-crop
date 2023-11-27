@@ -19,6 +19,7 @@ const ProductForm: FC = () => {
 		text: ''
 	})
 	const [file, setFile] = useState<FileList | null>(null)
+	const [article, setArticle] = useState<FileList | null>(null)
 	const addTable = () => {
 		setData(prev => ({
 			...prev,
@@ -35,8 +36,15 @@ const ProductForm: FC = () => {
 				className={styles.from}
 				onSubmit={e => {
 					e.preventDefault()
-					isTrue(data, file)
-						? handlerSubmitForm(e, data, file as FileList, setUi, setData)
+					isTrue(data, file, article)
+						? handlerSubmitForm(
+								e,
+								data,
+								file as FileList,
+								setUi,
+								setData,
+								article as FileList
+						  )
 						: setUi({
 								...ui,
 								alertShow: true,
@@ -81,6 +89,15 @@ const ProductForm: FC = () => {
 					accept='.jpg, .png, .gif, .HEIC, .jpeg, .webp'
 					multiple={true}
 					id='firstImage'
+				/>
+				<label htmlFor='articles'>Add article</label>
+				<input
+					onChange={event => setArticle(event.target.files)}
+					type='file'
+					name='imgSelect'
+					accept='.pdf, .docx, .pptx, .xlsx'
+					multiple={false}
+					id='articles'
 				/>
 				<label htmlFor='select'>Select product type</label>
 				<select

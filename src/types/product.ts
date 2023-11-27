@@ -10,6 +10,8 @@ export interface IProduct {
 	name: string
 	image: string[]
 	imageName: string[]
+	article: string
+	articleName: string
 	type: TProductType | string
 	description: string
 	subTitle?: string

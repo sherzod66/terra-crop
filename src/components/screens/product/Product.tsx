@@ -10,6 +10,7 @@ import cn from 'clsx'
 import BuyColumn from '@/components/ui/buy column/BuyColumn'
 
 const Product: FC<{ data: IProduct }> = ({ data }) => {
+	console.log(data)
 	useEffect(() => animationScroll(styles), [data])
 	return (
 		<>
@@ -73,6 +74,13 @@ const Product: FC<{ data: IProduct }> = ({ data }) => {
 										: ''
 									: ''}
 							</div>
+							<a
+								target='_blank'
+								href={data.article}
+								className={styles.useArticle}
+							>
+								Foydalanish uchun maqola
+							</a>
 						</div>
 					</div>
 				</div>

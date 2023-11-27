@@ -2,13 +2,18 @@ import { INews } from '@/types/news.type'
 import { IProduct } from '@/types/product'
 import { ISellers } from '@/types/sellers'
 
-export const isTrue = (data: IProduct, file: FileList | null) =>
+export const isTrue = (
+	data: IProduct,
+	file: FileList | null,
+	article: FileList | null
+) =>
 	data.description !== '' &&
 	data.name !== '' &&
 	data.subTitle !== '' &&
 	data.type !== '' &&
 	data.table.length > 0 &&
-	file !== null
+	file !== null &&
+	article !== null
 
 export const isTrueSeller = (data: ISellers) =>
 	data.fullName !== '' &&

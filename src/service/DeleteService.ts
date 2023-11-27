@@ -6,7 +6,6 @@ import { ISellers } from '@/types/sellers'
 import { initializeApp } from 'firebase/app'
 import { deleteDoc, doc, getFirestore } from 'firebase/firestore'
 import { deleteObject, getStorage, ref } from 'firebase/storage'
-import { NextRouter } from 'next/router'
 import { Dispatch, SetStateAction } from 'react'
 
 type TDelProduct = (
@@ -32,6 +31,12 @@ export const DeleteServiceProduct: TDelProduct = async (data, setIsInfo) => {
 		} catch (e) {
 			console.log(e)
 		}
+	}
+	try {
+		const deleteArticle = ref(storage, `articles/${data.articleName}`)
+		await deleteObject(deleteArticle)
+	} catch (e) {
+		console.log(e)
 	}
 	try {
 		const docRemove = doc(db, 'products', data.id)

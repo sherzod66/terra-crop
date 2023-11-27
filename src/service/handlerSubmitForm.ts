@@ -11,7 +11,8 @@ type THandler = (
 	data: IProduct,
 	file: FileList,
 	setUi: Dispatch<SetStateAction<TUi>>,
-	setData: Dispatch<SetStateAction<IProduct>>
+	setData: Dispatch<SetStateAction<IProduct>>,
+	article: FileList
 ) => void
 
 const app = initializeApp(FirebaseConfig)
@@ -23,7 +24,8 @@ export const handlerSubmitForm: THandler = async (
 	data,
 	file,
 	setUi,
-	setData
+	setData,
+	article
 ) => {
 	setUi(prev => ({ ...prev, loading: true }))
 	console.log('start')
@@ -32,6 +34,8 @@ export const handlerSubmitForm: THandler = async (
 		image: [],
 		imageName: [],
 		name: data.name.toLowerCase(),
+		article: '',
+		articleName: '',
 		table: data.table,
 		type: data.type,
 		subTitle: data.subTitle,
@@ -48,6 +52,14 @@ export const handlerSubmitForm: THandler = async (
 		finalDate.image.push(getUrl)
 		finalDate.imageName.push(i.name)
 	}
+
+	const storageArticle = ref(storage, `articles/${article[0].name}`)
+	const addArticle = await uploadBytes(storageArticle, article[0])
+	const articleUrl = await getDownloadURL(
+		ref(storage, `articles/${article[0].name}`)
+	)
+	finalDate.article = articleUrl
+	finalDate.articleName = article[0].name
 
 	try {
 		const writeDocument = await addDoc(collection(db, 'products'), finalDate)

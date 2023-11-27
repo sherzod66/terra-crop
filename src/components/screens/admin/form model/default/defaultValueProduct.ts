@@ -7,5 +7,7 @@ export const defaultValue: IProduct = {
 	name: '',
 	table: [{ culture: '', norm: '', timing: '' }],
 	type: '',
-	subTitle: ''
+	subTitle: '',
+	article: '',
+	articleName: ''
 }

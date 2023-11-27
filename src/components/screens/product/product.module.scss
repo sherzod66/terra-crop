@@ -111,5 +111,9 @@
 				}
 			}
 		}
+		.useArticle {
+			margin-top: 30px;
+			@extend %buttonStyle;
+		}
 	}
 }
