@@ -34,14 +34,13 @@ const Products: FC<TAllProduct> = ({ data, id }) => {
 								>
 									<div
 										itemScope
-										itemType={AllCollection(id)}
+										itemType='http://schema.org/ImageObject'
 										className={styles.product_detail__item}
 									>
 										<div className={styles.product_detail__image}>
 											<img
-												itemProp='contentUrl'
 												src={product.image[imageIndex]}
-												alt={product.name}
+												alt={`TerraCrop ${product.name}`}
 											/>
 										</div>
 										<h3

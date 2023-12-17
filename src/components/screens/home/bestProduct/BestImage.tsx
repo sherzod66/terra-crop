@@ -6,8 +6,9 @@ import cn from 'clsx'
 import { animationScroll } from '@/util/animation'
 import { useAdminProduct } from '../../../hooks/useAdminProduct'
 import { getImageChangeId } from '@/util/getImageId'
-const BestImage: FC = () => {
-	const { products } = useAdminProduct()
+import { IProduct } from '@/types/product'
+const BestImage: FC<{ response: IProduct[] }> = ({ response }) => {
+	const [products, setProducts] = useState<IProduct[]>(response)
 	const [num, setNum] = useState<number>(0)
 	useEffect(() => {
 		animationScroll(styles)

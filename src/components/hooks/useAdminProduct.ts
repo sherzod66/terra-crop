@@ -5,7 +5,6 @@ import {
 	getNews,
 	getNewsFour,
 	getProduct,
-	getProductFour,
 	getSellers
 } from '@/service/getProduct'
 import { ISellers } from '@/types/sellers'
@@ -17,7 +16,6 @@ export const useAdminProduct = () => {
 	const [isInfo, setIsInfo] = useState({ loading: false, notFound: false })
 	useEffect(() => {
 		if (id) getProduct(String(id), setProducts, setIsInfo)
-		else getProductFour('products', setProducts, setIsInfo)
 	}, [id])
 
 	return useMemo(

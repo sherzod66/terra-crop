@@ -83,29 +83,6 @@ export const getSellers: TGetSeller = async (coll, setState, setIsInfo) => {
 	}
 }
 
-export const getProductFour: TGet = async (coll, setState, setIsInfo) => {
-	setIsInfo(prev => ({ ...prev, loading: true }))
-	const q = query(collection(db, coll), orderBy('createTime'), limit(4))
-	try {
-		const products = await getDocs(q)
-		if (!products.empty) {
-			setIsInfo(prev => ({ ...prev, loading: false }))
-			products.forEach(doc => {
-				//console.log(doc.data())
-				setState(prev => [
-					...prev,
-					{ id: doc.id, ...(doc.data() as Omit<IRequiredCar, 'id'>) }
-				])
-			})
-		} else {
-			setIsInfo(prev => ({ ...prev, loading: false, notFound: true }))
-		}
-	} catch (e) {
-		setIsInfo(prev => ({ ...prev, loading: false, notFound: true }))
-		console.log(e)
-	}
-}
-
 interface IRequiredNews extends Required<INews> {}
 type TGetNews = (
 	coll: string,
@@ -158,6 +135,26 @@ export const getNewsFour: TGetNews = async (coll, setState, setIsInfo) => {
 		}
 	} catch (e) {
 		setIsInfo(prev => ({ ...prev, loading: false, notFound: true }))
+		console.log(e)
+	}
+}
+
+export const getServerProduct = async (): Promise<IProduct[] | undefined> => {
+	try {
+		const q = query(collection(db, 'products'), orderBy('createTime'), limit(4))
+		const response: IProduct[] = []
+		const products = await getDocs(q)
+		if (!products.empty) {
+			products.forEach(doc => {
+				//console.log(doc.data())
+				response.push({
+					id: doc.id,
+					...(doc.data() as Omit<IRequiredCar, 'id'>)
+				})
+			})
+		}
+		return response
+	} catch (e) {
 		console.log(e)
 	}
 }
