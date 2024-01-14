@@ -1,3 +1,4 @@
+'use client'
 import { FC } from 'react'
 import styles from './bestProduct.module.scss'
 import BestImage from './BestImage'

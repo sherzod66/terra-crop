@@ -146,7 +146,6 @@ export const getServerProduct = async (): Promise<IProduct[] | undefined> => {
 		const products = await getDocs(q)
 		if (!products.empty) {
 			products.forEach(doc => {
-				//console.log(doc.data())
 				response.push({
 					id: doc.id,
 					...(doc.data() as Omit<IRequiredCar, 'id'>)

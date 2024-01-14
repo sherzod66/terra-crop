@@ -3,6 +3,7 @@ import { FC, useState } from 'react'
 import styles from './model.module.scss'
 import { useParams, usePathname } from 'next/navigation'
 import { dashboardBarList } from '@/components/screens/admin/adminDashboard/dashboardBarList'
+import { IoMdClose } from 'react-icons/io'
 const Model: FC = () => {
 	const [isShow, setIsShow] = useState(false)
 	const { id } = useParams()
@@ -22,13 +23,10 @@ const Model: FC = () => {
 				</button>
 			)}
 			{isShow && (
-				<div
-					onClick={e =>
-						!(e.target as HTMLElement).closest('#model-content') &&
-						setIsShow(!isShow)
-					}
-					className={styles.model}
-				>
+				<div className={styles.model}>
+					<button className={styles.close} onClick={() => setIsShow(!isShow)}>
+						<IoMdClose />
+					</button>
 					<div id='model-content' className={styles.model__content}>
 						{dashboardBarList.map((item, index) =>
 							index === Detail ? <item.ModelDetail key={index} /> : ''

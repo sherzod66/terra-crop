@@ -1,6 +1,6 @@
 import { IProduct } from '@/types/product'
 import { Dispatch, FormEvent, SetStateAction } from 'react'
-import { collection, addDoc, getFirestore } from 'firebase/firestore'
+import { getFirestore, setDoc, doc } from 'firebase/firestore'
 import { initializeApp } from 'firebase/app'
 import { FirebaseConfig } from '@/components/firebaseConfig/FirebaseConfig'
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage'
@@ -60,9 +60,12 @@ export const handlerSubmitForm: THandler = async (
 	)
 	finalDate.article = articleUrl
 	finalDate.articleName = article[0].name
-
+	const changeName = finalDate.name.split(' ')
 	try {
-		const writeDocument = await addDoc(collection(db, 'products'), finalDate)
+		const writeDocument = await setDoc(
+			doc(db, 'products', changeName.join('-')),
+			finalDate
+		)
 		setUi(prev => ({
 			...prev,
 			loading: false,

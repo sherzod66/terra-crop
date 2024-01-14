@@ -4,6 +4,17 @@
 	font-size: 18px;
 }
 .model {
+	.close {
+		position: fixed;
+		right: 100px;
+		top: 30px;
+		background-color: #fff;
+		color: #000;
+		padding: 10px;
+		border-radius: 22px;
+		font-size: 30px;
+		line-height: 0;
+	}
 	position: fixed;
 	left: 0;
 	top: 0;
