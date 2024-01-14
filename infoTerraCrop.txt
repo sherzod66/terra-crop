@@ -1,3 +1,7 @@
 // Google & fireBase account
 email: terracrop4@gmail.com
 password: TerraCrop56416587
+
+//Ubuntu server
+login: sherzod
+pass: sher123
