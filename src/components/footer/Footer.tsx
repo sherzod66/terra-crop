@@ -8,7 +8,9 @@ import styles from './footer.module.scss'
 import cn from 'clsx'
 import { animationScroll } from '@/util/animation'
 const Footer = () => {
-	useEffect(() => animationScroll(styles), [])
+	useEffect(() => {
+		animationScroll(styles)
+	}, [])
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footer__container}>

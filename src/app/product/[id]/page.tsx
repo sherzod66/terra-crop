@@ -38,6 +38,7 @@ export async function generateMetadata(
 
 const Page = async ({ params, searchParams }: Props) => {
 	const data = (await fetchDataProduct(params.id)).data() as IProduct
+
 	const imageIndex = data.imageName.findIndex(name => name.includes('main'))
 	const delItem = data.image.splice(imageIndex, 1)
 	data.image = [...delItem, ...data.image]

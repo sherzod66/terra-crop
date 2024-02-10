@@ -1,5 +1,10 @@
-import HomePage from "@/components/screens/home/HomePage";
+import Layout from '@/components/layout/Layout'
+import HomePage from '@/components/screens/home/HomePage'
 
 export default function Home() {
-  return <HomePage />;
+	return (
+		<Layout>
+			<HomePage />
+		</Layout>
+	)
 }

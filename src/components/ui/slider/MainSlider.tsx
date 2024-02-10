@@ -3,8 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import './mainSlider.scss'
 import 'swiper/scss'
 import 'swiper/scss/pagination'
-// import required modules
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import { Pagination, Autoplay } from 'swiper/modules'
 const MainSlider = () => {
 	return (
 		<Swiper

@@ -8,13 +8,13 @@ import NewsMin from './newsMin/NewsMin'
 
 const HomePage: FC = () => {
 	return (
-		<Layout>
+		<>
 			<MainSlider />
 			<BestProduct />
 			<AboutMin />
 			<WyUs />
 			<NewsMin />
-		</Layout>
+		</>
 	)
 }
 
